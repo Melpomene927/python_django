@@ -1,0 +1,23 @@
+<html>
+<body>
+<h1>
+亞股股市資訊
+</h1>
+<h4>
+    {%for stock in stocks%}
+        <ul>
+            <li> 分類:{{stock.分類}}</li>
+            <li> 指數:{{stock.指數}}</li>
+        </ul>
+
+    {%endfor%}
+</h4>
+<p>目前時間為:{{time}}</p>
+</body>
+</html>
+
+
+
+
+
+

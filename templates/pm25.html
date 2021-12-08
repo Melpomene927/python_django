@@ -1,0 +1,29 @@
+<html>
+<body>
+<h1>
+PM25每日資料
+</h1>
+<table>
+    <thead>
+        {%for th in theads%}
+        <th>{{th}}</th>
+        {%endfor%}
+    </thead>
+    <tbody>
+        {%for row in pm25%}
+            <tr>
+                {%for col in row%}
+                    <td>{{col}}</td>                       
+                {%endfor%}
+            </tr>
+        {%endfor%}
+    </tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
