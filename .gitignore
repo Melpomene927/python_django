@@ -1,6 +1,6 @@
 *.csv
 django_web.code-workspace
-
+.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
