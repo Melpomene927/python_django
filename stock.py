@@ -9,13 +9,14 @@ def GetStock():
     if req.status_code == 200:
         soup=BeautifulSoup(req.text,'lxml')
     
-    tables=soup.find(id='ystkchatwtb-table-tab1').find_all('table')
+    lis=soup.find(id='main-4-HotStock-Proxy').find_all('li')
     datas=[]
-    for tbl in tables:
+    for li in lis:
         data={}
         #print(tbl.find('th').text.strip(),tbl.find('td').text.strip())
-        data['分類']=tbl.find('th').text.strip()
-        data['指數']=tbl.find('td').text.strip()
+        data['股名']=li.find('div', class_="Ta(start)").text.strip()
+        data['股價']=li.find('span', class_="Fw(600)").text.strip()
+        data['漲跌/漲跌幅']=li.fin()
         datas.append(data)
     
 
