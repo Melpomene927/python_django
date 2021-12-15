@@ -1,6 +1,14 @@
-body div.card{
-    background-color: antiquewhite;
+.list-group-item:before{
+    content:"\f0a9";
+    font-family: "Font Awesome 5 Pro";
+    padding-right: 5px;
+}
+
+#divMainArt .card-img-top{
     
-    left: 10%;
-    width: 80%;
+/* overflow-y: hidden; */
+    
+/* position: absolute; */
+    
+/* clip: auto; */
 }
