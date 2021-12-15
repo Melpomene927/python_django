@@ -1,14 +1,12 @@
+body{
+    font-family: Microsoft JhengHei, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p span:before{
+    content: " ";
+}
+
 .list-group-item:before{
     content:"\f0a9";
     font-family: "Font Awesome 5 Pro";
     padding-right: 5px;
-}
-
-#divMainArt .card-img-top{
-    
-/* overflow-y: hidden; */
-    
-/* position: absolute; */
-    
-/* clip: auto; */
 }
