@@ -17,14 +17,14 @@
 </head>
 
 <body>
-    <div class="px-3">
+    <div class="container" >
         <div class="card-group mt-4">
             <div class="card">
                 <div id="divMainArt" class="card-body position-relative">
                     <div class="img-wrapper">
                         <img class="card-img-top" src="../img/banner.jpg" alt="banner.jpg" width="90%" />
                     </div>
-                    <h2 class="card-title mt-2">我愛健身網站</h2>
+                    <h2 class="card-title mt-2 mr-5">我愛健身網</h2>
                     <h3 class="card-subtitle text-muted">何謂健身?</h3>
                     <p class="card-text mt-3 mx-3">
                         <span class="font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;健身，英文稱為workout，健身這兩個字拆開來的意思就是健康身體，通過各種運動方式或方法來增強力量、增加肌肉量、柔韌性、耐力，以及提高協調和控制身體各部分的能力來使我們的身體更強健。</span>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="row no-gutters mt-4">
-            <div class="col-12 col-md-6 pr-3">
+            <div class="col-12 col-md-6 pr-0 pr-md-3">
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title mt-2">健身的10個好處</h2>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mt-3 mt-md-0">
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-title mt-2">好文章連結</h2>
@@ -86,7 +86,7 @@
                             </li> -->
                         </ul>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer text-center">
                         <small class="card-text mt-5">節錄至 https://fitnesstwenty.com/benefits-of-workout/</small>
                     </div>
                 </div>
@@ -105,8 +105,8 @@
                         <h2 class="card-title mt-2">一天所需卡路里</h2>
                     </div>
                     <div class="card-body">
-                        <table class="table table-responsive-sm table-striped table-hover">
-                            <thead class="thead-light">
+                        <table class="table table-responsive-sm table-striped table-hover text-center">
+                            <thead class="thead bg-warning">
                                 <tr>
                                     <th scope="row">每天活動量</th>
                                     <th scope="row">體重過輕者所需熱量</th>
@@ -116,19 +116,19 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="col">輕度工作</th>
+                                    <th scope="col" class="bg-success text-white">輕度工作</th>
                                     <td>35大卡 X 目前體重（公斤）</td>
                                     <td>35大卡 X 目前體重（公斤）</td>
                                     <td>35大卡 X 目前體重（公斤）</td>
                                 </tr>
                                 <tr>
-                                    <th scope="col">中度工作</th>
+                                    <th scope="col" class="bg-success text-white">中度工作</th>
                                     <td>40大卡 X 目前體重（公斤）</td>
                                     <td>30大卡 X 目前體重（公斤）</td>
                                     <td>30大卡 X 目前體重（公斤）</td>
                                 </tr>
                                 <tr>
-                                    <th scope="col">重度工作</th>
+                                    <th scope="col" class="bg-success text-white">重度工作</th>
                                     <td>45大卡 X 目前體重（公斤）</td>
                                     <td>40大卡 X 目前體重（公斤）</td>
                                     <td>35大卡 X 目前體重（公斤）</td>
@@ -166,18 +166,21 @@
                             <h2 class="card-title mt-2">需要更多免費資訊？</h2>
                         </div>
                         <div class="card-body">
-                            <h2 class="card-title mt-2">免費索取健身資訊</h2>
-                            <p class="card-text mt-3">
-                                前100名還贈送 [我愛健身] 書籍一冊
+                            <h4 class="card-title mt-2">免費索取健身資訊</h4>
+                            <p class="card-text mt-0 text-right">
+                                <small>前100名還贈送 [我愛健身] 書籍一冊</small>
                             </p>
-                            <label for="txtEmail">Email</label>
-                            <input class="form-control" id="txtEmail" name="email" type="text">
-                            
-                            <label for="txtComments" >您寶貴的意見</label>
-                            <textarea class="form-control" name="comments" id="txtComments" cols="30" rows="10"></textarea>
+                            <div class="form-group">
+                                <label for="txtEmail">Email</label>
+                                <input class="form-control" id="txtEmail" name="email" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtComments" >您寶貴的意見</label>
+                                <textarea class="form-control" name="comments" id="txtComments" cols="30" rows="10"></textarea>
+                            </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-primary" type="submit">確定</button>
+                            <button class="btn btn-block btn-primary" type="submit">確定</button>
                         </div>
                     </form>
                 </div>

@@ -4,7 +4,6 @@ body{
 p span:before{
     content: " ";
 }
-
 .img-wrapper{
     max-height: 30rem;
     overflow-y: hidden;
@@ -14,4 +13,8 @@ p span:before{
     content:"\f0a9";
     font-family: "Font Awesome 5 Pro";
     padding-right: 5px;
+}
+
+.card {
+    border-radius: 1rem !important;
 }
