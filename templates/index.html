@@ -15,13 +15,30 @@
 </head>
 </head>
 <body>
-    <h2>訪客:{{name}}</h2>
-    <p>目前時間為:{{time}}</p>
-    <div>
-        <a href="pm25">pm2.5</a>
-        <a href="stock">股票爬蟲</a>
-        <a href="test.html">HTML練習</a>
-        <a href="bmi.html">BMI計算</a>
+    <div class="container">
+        <div class="mt-5"></div>
+        <div class="card">
+            <div class="card-header">
+                <h2>訪客:{{name}}</h2>
+            </div>
+            <div class="card-body">
+                <p>目前時間為:{{time}}</p>
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-block btn-info" href="pm25">pm2.5</a>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-block btn-success" href="stock">股票爬蟲</a>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-block btn-warning" href="test_html">HTML練習</a>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-block btn-secondary" href="bmi">BMI計算</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

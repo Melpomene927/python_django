@@ -3,7 +3,7 @@ from datetime import datetime
 #import pandas as pd
 #import pandas_datareader as pdr
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 @app.route('/')
 @app.route('/index')
 @app.route('/index/<string:name>')
@@ -39,6 +39,9 @@ def pm25Site():
     theads,pm25=getPM25()
     return render_template('pm25.html',**locals())
 
+@app.route('/bmi')
+def bmiCalc():
+    return render_template('bmi.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
