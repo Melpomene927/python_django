@@ -11,6 +11,18 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script>
+        $(document).ready(function(){
+            $('table thead th a').on('click',function(e){
+                //alert($(this).text());
+                let _sort = $(this).text();
+                let _ascending = document.all('hidAscend').value.toLowerCase();
+                document.all('hidSort').value = _sort;
+                alert(`sort by: ${_sort} ascending=${_ascending}`);
+                document.all('btnSubmit').click();
+            })
+        })
+    </script>
 </head>
 <body>
     <div class="container">
@@ -29,7 +41,9 @@
                             <thead>
                                 <tr class="bg-warning">
                                     {%for th in theads%}
-                                    <th scope="row">{{th}}</th>
+                                    <th scope="row">
+                                        <a class="" href="javascript:void(0);">{{th}}</a>
+                                    </th>
                                     {%endfor%}
                                 </tr>
                             </thead>
@@ -56,6 +70,11 @@
             </div>
         </div>
     </div>
+    <form action="" method="post">
+        <input id="hidSort" type="hidden" name="sort" value="">
+        <input id="hidAscend" type="hidden" name="ascending" value="{{_ascending}}">
+        <button id="btnSubmit" class="d-none" type="submit"></button>
+    </form>
 </body>
 </html>
 
