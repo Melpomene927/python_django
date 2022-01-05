@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="../static/js/bmi.js"></script>
+</head>
+
+<body>
+    <div class="mt-1 mt-lg-5"></div>
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>BMI計算機</h1>
+                    </div>
+                    <div class="card-body">
+                        <form id="frmBMI" action="" method="get">
+                            <label for="name">姓名</label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="請輸入姓名">
+                            <br>
+                            <label for="height">身高</label>
+                            <input class="form-control" type="number" name="height" id="height" placeholder="請輸入身高" step="0.5" required>
+                            <br>
+                            <label for="weight">體重</label>
+                            <input class="form-control" type="number" name="weight" id="weight" placeholder="請輸入體重" step="0.5" required>
+                            <div id="divBtn" class="mt-5 text-right">
+                                <button class="btn btn-block btn-info" type="submit" onclick="btnCalc_Click();">計算</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a class="btn btn-block btn-outline-success" href="../index">回首頁</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
