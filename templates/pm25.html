@@ -11,19 +11,41 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script>
+        $(document).ready(function(){
+            $('table thead th a').on('click',function(e){
+                //alert($(this).text());
+                let _sort = $(this).text();
+                let _ascending = document.all('hidAscend').value.toLowerCase();
+                document.all('hidSort').value = _sort;
+                alert(`sort by: ${_sort} ascending=${_ascending}`);
+                document.all('btnSubmit').click();
+            })
+        })
+    </script>
 </head>
 <body>
     <div class="container">
+        <div class="fixed-top">
+            <div class="row no-gutters bg-success">
+                <div class="col text-center px-2">
+                    <h1 class="text-white">PM25每日資料</h1>
+                </div>
+            </div>
+        </div>
         <div class="row mt-5">
             <div class="col">
                 <div class="card">
-                    <div class="card-body">
-                        <h1>PM25每日資料</h1>
-                        <table class="table table-striped">
+                    <div class="card-body p-0">
+                        <table class="table table-striped m-0">
                             <thead>
-                                {%for th in theads%}
-                                <th>{{th}}</th>
-                                {%endfor%}
+                                <tr class="bg-warning">
+                                    {%for th in theads%}
+                                    <th scope="row">
+                                        <a class="" href="javascript:void(0);">{{th}}</a>
+                                    </th>
+                                    {%endfor%}
+                                </tr>
                             </thead>
                             <tbody>
                                 {%for row in pm25%}
@@ -40,7 +62,19 @@
             </div>
         </div>
         <div class="mt-5"></div>
+        <div class="fixed-bottom">
+            <div class="row no-gutters justify-content-end bg-success">
+                <div class="col p-2 text-center text-md-right">
+                    <a href="../" class="btn btn-block btn-outline-light">回首頁</a>
+                </div>
+            </div>
+        </div>
     </div>
+    <form action="" method="post">
+        <input id="hidSort" type="hidden" name="sort" value="">
+        <input id="hidAscend" type="hidden" name="ascending" value="{{_ascending}}">
+        <button id="btnSubmit" class="d-none" type="submit"></button>
+    </form>
 </body>
 </html>
 

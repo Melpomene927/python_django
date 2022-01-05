@@ -1,8 +1,9 @@
 # python_django
-實作RESTful API
+實作RESTful API 並架設在Heroku
 
 [測試網站](https://melpomene927.github.io/python_django/templates/test.html)
 
+[Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python)
 
 ### 使用工具
 - [visual code](https://code.visualstudio.com/)
