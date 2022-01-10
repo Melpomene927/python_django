@@ -4,6 +4,7 @@ from datetime import datetime
 from werkzeug.exceptions import MethodNotAllowed
 #import pandas as pd
 #import pandas_datareader as pdr
+import json
 
 app = Flask(__name__, static_url_path='/static')
 @app.route('/')
@@ -36,23 +37,44 @@ def stock():
 
 from pm25 import getPM25
 @app.route('/pm25', methods=['GET','POST'])
-@app.route('/pm25?sort=<string:sort>', methods=['GET'])
-def pm25Site(_sort='',_ascending=False):
+@app.route('/pm25/sort=<string:sort>', methods=['GET'])
+@app.route('/pm25/ascending=<string:ascending>', methods=['GET'])
+@app.route('/pm25/sort=<string:sort>&ascending=<string:ascending>', methods=['GET'])
+def pm25Site(sort='',ascending='false'):
     time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    if (request.method == "GET") & (_sort!=''):
-        print(f'request.method={request.method} sort by {_sort}')
-        theads,pm25=getPM25(sort=_sort)
-    elif request.method == "POST":
-        _sort = request.form.get('sort')
-        print(f'request.method={request.method} sort by {_sort}')
-        theads,pm25=getPM25(sort=_sort)
-    else:
-        theads,pm25=getPM25()
+    if request.method == "POST":
+        sort = request.form.get('sort')
+        ascending = request.form.get('ascending')
     
+    #ascending = str(ascending).lower()
+    print(f'request.method={request.method} sort by {sort}, ascending={ascending}')
+
+    if sort == '':
+        theads,pm25,time=getPM25(_ascending=ascending)
+    else:
+        theads,pm25,time=getPM25(sort=sort, _ascending=ascending)
+
     #print(f'method={request.method}')
 
     return render_template('pm25.html',**locals())
+
+@app.route('/pm25-charts')
+def pm25Charts():
+    return render_template('pm25charts.html',**locals())
+
+@app.route('/pm25-data/groupby=<groupby>', methods=['GET'])
+@app.route('/pm25-data', methods=['GET','POST'])
+def pm25datas(groupby=''):
+    time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    if request.method == "POST":
+        groupby = request.form.get('groupby')
+
+    if groupby != "":
+        theads,pm25,time=getPM25(_groupby=groupby)
+    else:
+        theads,pm25,time=getPM25()
+    return json.dumps({"columns":theads, "datas":pm25, "time": time}, ensure_ascii=False)
 
 @app.route('/bmi')
 def bmiCalc():

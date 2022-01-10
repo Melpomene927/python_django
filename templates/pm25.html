@@ -16,7 +16,7 @@
             $('table thead th a').on('click',function(e){
                 //alert($(this).text());
                 let _sort = $(this).text();
-                let _ascending = document.all('hidAscend').value.toLowerCase();
+                let _ascending =!eval(document.all('hidAscend').value);
                 document.all('hidSort').value = _sort;
                 alert(`sort by: ${_sort} ascending=${_ascending}`);
                 document.all('btnSubmit').click();
@@ -72,7 +72,7 @@
     </div>
     <form action="" method="post">
         <input id="hidSort" type="hidden" name="sort" value="">
-        <input id="hidAscend" type="hidden" name="ascending" value="{{_ascending}}">
+        <input id="hidAscend" type="hidden" name="ascending" value="{{ascending}}">
         <button id="btnSubmit" class="d-none" type="submit"></button>
     </form>
 </body>
