@@ -18,22 +18,31 @@
     <div class="container">
         <div class="mt-5"></div>
         <div class="card">
-            <div class="card-header">
+            <div class="card-header {{showName}}">
                 <h2>訪客:{{name}}</h2>
+            </div>
+            <div class="img-wrapper">
+                <img class="card-img-top" src="../static/img/banner.jpg" alt="banner.jpg" width="90%" />
             </div>
             <div class="card-body">
                 <p>目前時間為:{{time}}</p>
                 <div class="row">
-                    <div class="col">
-                        <a class="btn btn-block btn-info" href="pm25">pm2.5</a>
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                        <a class="btn btn-block btn-info" href="pm25">pm2.5即時資料</a>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                        <a class="btn btn-block btn-info" href="pm25-charts">pm2.5即時資料視覺化</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
+                        <a class="btn btn-block btn-info" href="pm25-data">pm2.5資料抓取</a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
                         <a class="btn btn-block btn-success" href="stock">股票爬蟲</a>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
                         <a class="btn btn-block btn-warning" href="test_html">HTML練習</a>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-6 col-lg-3 mt-3">
                         <a class="btn btn-block btn-secondary" href="bmi">BMI計算</a>
                     </div>
                 </div>
