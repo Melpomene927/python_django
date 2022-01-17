@@ -94,10 +94,7 @@ $(document).ready(function(){
         //console.log($(this));
         var _groupby = $(this).val();
         showData(_groupby);
-    }).on('click','.btn',[],function(e){
-        //console.log($(this).children());
-        //$(this).find('input').click();
-    })
+    });
     window.onresize = function(){
         myChart.resize();
     };
