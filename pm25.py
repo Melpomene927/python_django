@@ -1,3 +1,4 @@
+import json
 import pandas as pd
 import numpy as np
 
@@ -19,12 +20,13 @@ def getPM25(sort='',_ascending='false', _groupby='', _groupbycol=[]):
     _sortedPM25 = data.sort_values(by='PM25', ascending=False)
     _max = {
         'Site': _sortedPM25['Site'][0],
-        'Value': _sortedPM25['PM25'][0],
+        'Value': int(_sortedPM25['PM25'][0]),
         'County': _sortedPM25['county'][0]
     }
+    #print(json.dumps(_max, ensure_ascii=False))
     _min = {
         'Site': _sortedPM25['Site'].tolist()[-1],
-        'Value': _sortedPM25['PM25'].tolist()[-1],
+        'Value': int(_sortedPM25['PM25'].tolist()[-1]),
         'County': _sortedPM25['county'].tolist()[-1]
     }
 
@@ -65,8 +67,11 @@ def getPM25(sort='',_ascending='false', _groupby='', _groupbycol=[]):
 
 if __name__=='__main__':
     #print(getPM25())
-    theads,pm25,time=getPM25(sort='county', _groupby='county', _groupbycol=['臺北市','臺中市'])
-    print(theads,time)     
+    #theads,pm25,extra=getPM25(sort='county', _groupby='county', _groupbycol=['臺北市','臺中市'])
+    #theads,pm25,extra=getPM25(sort='county', _groupby='county')
+    theads,pm25,extra=getPM25()
+    print(extra)     
+    print(theads)
     for i in pm25:
         print(i)
    
