@@ -74,7 +74,7 @@ def pm25Site(sort='',ascending='false'):
 
 ########################################
 #- PM2.5視覺化, 使用Apache Echarts的Javascript模組
-@app.route('/pm25-charts')
+@app.route('/pm25-charts', methods=['GET','POST'])
 def pm25Charts():
     time=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     _date=datetime.now().strftime('%Y-%m-%d')
@@ -89,13 +89,17 @@ def pm25datas(groupby=''):
     extra={}
     if request.method == "POST":
         groupby = request.form.get('groupby')
-
+    
     if groupby != "":
+        print(f'groupby={groupby}')
         theads,pm25,extra=getPM25(_groupby=groupby)
     else:
         theads,pm25,extra=getPM25()
 
     time = extra['DateTime']
+    #print(theads)
+    #print(pm25)
+    #print(extra)
     return json.dumps({"columns":theads, "datas":pm25, "extra": extra}, ensure_ascii=False)
 
 ########################################
